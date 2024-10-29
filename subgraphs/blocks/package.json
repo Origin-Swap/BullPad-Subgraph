@@ -1,0 +1,18 @@
+{
+  "name": "blocks",
+  "description": "PancakeSwap Subgraph",
+  "version": "1.0.0",
+  "repository": "git@github.com:pancakeswap/pancake-subgraph.git",
+  "author": "PancakeSwap",
+  "license": "GPL-3.0-or-later",
+  "scripts": {
+    "codegen": "graph codegen subgraph.yaml",
+    "build": "graph build subgraph.yaml",
+    "create-mainnet": "graph create --node https://api.subgraph.5ire.network bullpad/block",
+    "deploy-mainnet": "graph deploy --ipfs https://api.ipfs.5ire.network --node https://api.subgraph.5ire.network bullpad/block",
+    "create-local": "graph create bullpad/block --node http://127.0.0.1:8020",
+    "deploy-local": "graph deploy bullpad/block --ipfs http://localhost:5001 --node http://127.0.0.1:8020",
+    "deploy": "graph deploy --product hosted-service --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ pancakeswap/blocks subgraph.yaml",
+    "deploy:opbnb": "graph deploy --node https://open-platform-ap.nodereal.io/$API_KEY/opbnb-mainnet-graph-indexer/ --ipfs https://api.thegraph.com/ipfs/ pancakeswap/blocks"
+  }
+}
